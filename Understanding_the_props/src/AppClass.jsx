@@ -1,49 +1,22 @@
-import { Component } from "react";
-import "./App.css"
-import elephant from "./images/elephant.jpeg";
-const imageData = ()=>{
-  let data = [
-    {
-      id:1,
-      img:elephant
-    },
-    {
-      id:2,
-      img:elephant
-    },
-    {
-      id:3,
-      img:elephant
-    },
-    {
-      id:4,
-      img:elephant
-    }
-  ]
-  return data
-}
-export default class AppClass extends Component{
+import React, { Component } from "react";
+import "./App.css";
+
+export default class AppClass extends Component {
   render() {
-    const image = imageData()
+    let imagearr = this.props.imageprop;
+    console.log(imagearr);
 
     return (
-
       <div>
-          <h3>Kalvium Gallery</h3>
-          <div id='parent'>
-            {image.map(element => {
-              return <div>
-                <img src={element.img} alt="image" />
-              </div>
-            })}
-          </div>
+        <h3 className="heading">Kalvium Gallery</h3>
+    
+        <div className="parent">
         
+          {imagearr.map((image, index) => (
+            <img key={index} src={image.img} alt={`Image ${index}`} />
+          ))}
+        </div>
       </div>
-     
-    )
-  
+    );
   }
-
-  
-  
 }

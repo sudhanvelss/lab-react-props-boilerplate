@@ -1,48 +1,22 @@
-import './App.css';
-import elephant from "./images/elephant.jpeg";
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+import './App.css'
 
-const imageData = ()=>{
-  let data = [
-    {
-      id:1,
-      img:elephant
-    },
-    {
-      id:2,
-      img:elephant
-    },
-    {
-      id:3,
-      img:elephant
-    },
-    {
-      id:4,
-      img:elephant
-    }
-  ]
-  return data;
-}
-
-function App() {
-  
-  const image = imageData()
-
-  return (
-
+function App(props) {
+    console.log(props)
+    const {imageprop}=props;
+ return(
     <div>
-      <h3>Kalvium Gallery</h3>
-      <div id='parent'>
-        {image.map(element => {
-          return <div>
-            <img src={element.img} alt="image" />
-          </div>
-        })}
-      </div>
-      
-    </div>
-   
-  )
+        {
+            imageprop.map((element)=>{
+               return <img src={element.img} />
 
+            })
+        }
+
+    </div>
+ )
 }
 
-export default App;
+export default App
