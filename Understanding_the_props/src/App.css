@@ -1,25 +1,18 @@
-* {
-  box-sizing: border-box;
+.pictures{
+  display: grid;
+  grid-template-columns: repeat(2,500px);
+  justify-content: center;
 }
 
-body {
-  margin: 0;
-  font-family: Arial;
+img{
+  height: 40vh;
+  width: 40vw;
 }
 
-.column {
-  float: left;
-  width: 50%;
-  padding: 10px;
-}
-
-.column img {
-  margin-top: 12px;
-  width:100%;
-  cursor:pointer;
-}
-
-h1{
+h3{
   text-align: center;
-  padding: 32px;
+  font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+h2{
+  text-align: center;
 }
